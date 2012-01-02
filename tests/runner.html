@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Storekeeper tests</title>
+    <style>
+      html, body { font-family: Arial; }
+    </style>
+  </head>
+  <body>
+    <div id='shopkeeper_app'>
+      <div class="modal_loader">
+        <h1>Storekeeper tests</h1>
+      </div>
+    </div>
+    <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
+    <script src='test_config.js'></script>
+    <script>
+      window.Y = YUI().use("test", "sk:tests:models:order", function (Y) {
+        var Tests = Y.SKTests,
+        suite = new Y.Test.Suite("sk:tests");
+
+        Y.each(Tests, function (t) { suite.add(t); });
+
+        Y.Test.Runner.add(suite);
+        Y.Test.Runner.run();
+        
+      });
+    </script>
+  </body>
+</html>
