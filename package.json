@@ -1,0 +1,10 @@
+{
+  "name":         "Shopkeeper",
+  "description":  "webshop admin ui",
+  "homepage":     "http://shopkeep.er",
+  "version":      "0.0.1",
+  "author":       "Simon Højberg <r.hackr@gmail.com> (http://github.com/hojberg)",
+  "dependencies": {
+    "express":  ">=2.4.0 <2.5.0"
+  }
+}

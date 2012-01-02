@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Storekeeper</title>
+    <link rel="stylesheet/less"  type="text/css" href="css/master.less" />
+    <script src="js/vendor/less-1.1.5.min.js"></script>
+  </head>
+  <body>
+    <div id='shopkeeper_app'>
+      <div class="modal_loader">
+        Loading Storekeeper...
+      </div>
+    </div>
+    <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
+    <script src='js/config.js'></script>
+    <script>
+      YUI().use("sk:app", function (Y) {
+        var app = new Y.SK.App({
+          serverRouting:  false,
+          container:      '#storekeeper_app'
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+// colors
+@red:   #f00;
+@green: #0f0;
+@blue:  #00f;
+
+@white: #fff;
+@black: #000;
+@grey:  #888;
+@lightgrey: #ddd;
+@darkgrey: #444;
+
+// fonts
+.primary_font () { font-family: Arial, Helvetica, sans-serif; }
+
+@huge:    32px;
+@large:   24px;
+@normal:  18px;
+@small:   14px;
+@tiny:    12px;
+
+.font_size (@size: @normal) { font-size: @size; }
+
+.text_shadow(@color: @white) { text-shadow: 0 1px 1px @color; }
+
+.border-radius (@radius: 4px) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
