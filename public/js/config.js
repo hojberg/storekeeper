@@ -10,7 +10,15 @@
         modules: {
           'sk:app': {
             path:     'storekeeper_app.js',
-            requires: ['app-base', 'app-transitions']
+            requires: ['app-base', 'app-transitions', 'sk:views:dashboard']
+          },
+          'sk:models:order': {
+            path:     'models/order.js',
+            requires: ['model', "gallery-model-sync-rest"]
+          },
+          'sk:views:dashboard': {
+            path:     "views/dashboard_view.js", 
+            requires: ["view"]
           }
         }
       }

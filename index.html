@@ -7,9 +7,9 @@
     <script src="js/vendor/less-1.1.5.min.js"></script>
   </head>
   <body>
-    <div id='shopkeeper_app'>
-      <div class="modal_loader">
-        Loading Storekeeper...
+    <div id='storekeeper_app'>
+      <header id="main_header"></header>
+      <div id="main_content">
       </div>
     </div>
     <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
@@ -18,8 +18,8 @@
       YUI().use("sk:app", function (Y) {
         var app = new Y.SK.App({
           serverRouting:  false,
-          container:      '#storekeeper_app'
-        });
+          container:      '#main_content'
+        }).render();
       });
     </script>
   </body>

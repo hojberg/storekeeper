@@ -16,16 +16,18 @@
     <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
     <script src='test_config.js'></script>
     <script>
-      window.Y = YUI().use("test", "sk:tests:models:order", function (Y) {
-        var Tests = Y.SKTests,
-        suite = new Y.Test.Suite("sk:tests");
+      (function () {
+        window.Y = YUI().use("test", "sk:tests:models:order", "sk:tests:views:dashboard", function (Y) {
+          var Tests = Y.SKTests,
+          suite = new Y.Test.Suite("sk:tests");
 
-        Y.each(Tests, function (t) { suite.add(t); });
+          Y.each(Tests, function (t) { suite.add(t); });
 
-        Y.Test.Runner.add(suite);
-        Y.Test.Runner.run();
-        
-      });
+          Y.Test.Runner.add(suite);
+          Y.Test.Runner.run();
+          
+        });
+      }());
     </script>
   </body>
 </html>
