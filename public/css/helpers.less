@@ -9,6 +9,11 @@
 @lightgrey: #ddd;
 @darkgrey: #444;
 
+@base:      @darkgrey;
+@off_base:  @white;
+@canvas:    @white;
+@link:      #fd6256;
+
 // fonts
 .primary_font () { 
   font-family: Arial, Helvetica, sans-serif; 
@@ -22,7 +27,7 @@
 
 .font_size (@size: @normal) { font-size: @size; }
 
-.text_shadow(@color: @white) { text-shadow: 0 1px 1px @color; }
+.text_shadow(@shadow: 0 1px 1px @white) { text-shadow: @shadow; }
 
 .border_radius (@radius: 4px) {
   -webkit-border-radius: @radius;
@@ -34,4 +39,15 @@
   -webkit-box-shadow: @shadow;
      -moz-box-shadow: @shadow;
           box-shadow: @shadow;
+}
+
+.linear_gradient (@start, @end) {
+  background: @start;
+  background: -moz-linear-gradient(top, @start 0%, @end 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, @start), color-stop(100%, @end));
+  background: -webkit-linear-gradient(top, @start 0%, @end 100%);
+  background: -o-linear-gradient(top, @start 0%, @end 100%);
+  background: -ms-linear-gradient(top, @start 0%, @end 100%);
+  background: linear-gradient(top, @start 0%, @end 100%);
+  filter: ~'progid:DXImageTransform.Microsoft.gradient( startColorstr="@{start}", endColorstr="@{end}",GradientType=0 )';
 }

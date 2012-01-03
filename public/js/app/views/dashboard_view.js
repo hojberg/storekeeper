@@ -4,8 +4,7 @@ YUI.add("sk:views:dashboard", function (Y) {
 
     render: function () {
       var container = this.get("container");
-      container.addClass("hack");
-      container.setContent("rofl");
+      container.setContent("Dashboard");
       return this;
     }
 
