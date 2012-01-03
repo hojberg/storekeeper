@@ -1,10 +1,20 @@
-#storekeeper_app { width: 960px; margin: 20px auto; background: @white;
+#storekeeper_app { width: 960px; margin: 20px auto; background: @canvas;
   .border_radius;
   .box_shadow;
 }
 
-#main_header { background: #222; height: 50px;
-  .border_radius(4px 4px 0 0);
+#main_header { position: relative; height: 30px; padding: 15px; .border_radius(4px 4px 0 0); .linear_gradient(#545454, #3d3d3d);
+  #store_logo { color: @white; .font_size(@large); .text_shadow(0 -1px 1px @darkgrey); }
+  #main_nav { position: absolute; top: 18px; left: 160px; color: @white; .font_size(@small); .text_shadow(0 1px 1px @black);
+    ul > li { float: left; margin: 0 10px; padding: 5px 14px; .border_radius(12px); }
+    ul > li.current { background: rgba(255, 255, 255, 0.2); .box_shadow(inset 0 1px 1px @black); }
+  }
+  #search { position: absolute; top: 18px; right: 18px; color: @black; background: #333; .border_radius(14px); border: 0; border-top: 1px solid transparent; border-bottom: 1px solid rgba(255, 255, 255, 0.3); height: 20px; padding: 2px 10px; width: 130px; .box_shadow(inset 0 1px 2px rgba(0, 0, 0, 0.5)); .font_size(@tiny); line-height: @tiny;
+    -webkit-transition: all 0.2s ease-in;
+    &::-webkit-input-placeholder { color: darken(@grey, 10%); }
+    &:-moz-placeholder { color: red; }
+    &:focus { outline: none; background: @white; border: 1px solid rgba(0, 0, 0, 0.8); width: 200px; } 
+  }
 }
 
 #main_content { padding: 20px; }
