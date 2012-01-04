@@ -5,6 +5,9 @@ YUI.add("sk:app", function (Y) {
     views: {
       dashboard: {
         type: Y.SK.DashboardView
+      },
+      orders: {
+        type: Y.SK.OrdersView
       }
     },
 
@@ -20,23 +23,25 @@ YUI.add("sk:app", function (Y) {
     },
 
     showDashboard: function () {
-      this.showView('dashboard', {
-      });
+      this.showView('dashboard');
     },
 
     showOrders: function () {
+      this.showView('orders');
     }
 
   },
   {
     ATTRS: {
-      routes: [
-        { path: '/',        callback: 'showDashboard'},
-        { path: '/orders',  callback: 'showOrders'}
-      ]
+      routes: {
+        value: [
+          { path: '/',        callback: 'showDashboard'},
+          { path: '/orders',  callback: 'showOrders'}
+        ]
+      }
     }
   });
 
   Y.namespace("SK").App = StorekeeperApp;
 
-}, "0.0.1", {requires: ['app-base', 'app-transitions', "sk:views:dashboard"]});
+}, "0.0.1", {requires: ['app-base', 'app-transitions', "sk:views:dashboard", "sk:views:orders", "sk:models:order_list"]});

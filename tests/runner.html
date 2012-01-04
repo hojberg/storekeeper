@@ -17,7 +17,7 @@
     <script src='test_config.js'></script>
     <script>
       (function () {
-        window.Y = YUI().use("test", "sk:tests:models:order", "sk:tests:views:dashboard", function (Y) {
+        window.Y = YUI().use("test", "sk:tests:models:order", "sk:tests:views:dashboard", "sk:tests:views:orders", function (Y) {
           var Tests = Y.SKTests,
           suite = new Y.Test.Suite("sk:tests");
 
@@ -25,7 +25,6 @@
 
           Y.Test.Runner.add(suite);
           Y.Test.Runner.run();
-          
         });
       }());
     </script>

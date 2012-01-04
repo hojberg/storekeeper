@@ -10,14 +10,24 @@
         modules: {
           'sk:app': {
             path:     'storekeeper_app.js',
-            requires: ['app-base', 'app-transitions', 'sk:views:dashboard']
+            requires: ['app-base', 'app-transitions', 'sk:views:dashboard', 'sk:views:orders']
           },
+          // --- models --- //
           'sk:models:order': {
             path:     'models/order.js',
             requires: ['model', "gallery-model-sync-rest"]
           },
+          'sk:models:order_list': {
+            path:     'models/order_list.js',
+            requires: ['model', "gallery-model-sync-rest"]
+          },
+          // --- views --- //
           'sk:views:dashboard': {
             path:     "views/dashboard_view.js", 
+            requires: ["view"]
+          },
+          'sk:views:orders': {
+            path:     "views/orders_view.js", 
             requires: ["view"]
           }
         }
