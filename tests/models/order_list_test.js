@@ -9,6 +9,10 @@ YUI.add("storekeepertests-models-order_list", function (Y) {
 
     tearDown: function () {
       delete this.orderList;
+    },
+
+    "model should be an Order": function () {
+      Y.Assert.areEqual(Y.SK.Order, this.orderList.model);
     }
 
     

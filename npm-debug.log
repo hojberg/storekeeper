@@ -1,0 +1,58 @@
+info it worked if it ends with ok
+verbose cli [ 'node', '/Users/hojberg/local/bin/npm', 'test' ]
+info using npm@1.0.27
+info using node@v0.4.11
+verbose config file /Users/hojberg/.npmrc
+verbose config file /Users/hojberg/local/etc/npmrc
+silly testEngine { name: 'Shopkeeper',
+silly testEngine   description: 'webshop admin ui',
+silly testEngine   homepage: 'http://shopkeep.er',
+silly testEngine   version: '0.0.1',
+silly testEngine   author: 
+silly testEngine    { name: 'Simon Højberg',
+silly testEngine      email: 'r.hackr@gmail.com',
+silly testEngine      url: 'http://github.com/hojberg' },
+silly testEngine   scripts: 
+silly testEngine    { test: 'yeti tests/runner.html --solo',
+silly testEngine      start: 'node server.js' },
+silly testEngine   dependencies: 
+silly testEngine    { express: '>=2.4.0 <2.5.0',
+silly testEngine      handlebars: '>=1.0.2beta' },
+silly testEngine   _npmJsonOpts: 
+silly testEngine    { file: '/Users/hojberg/code/criticalpair/storekeeper/package.json',
+silly testEngine      wscript: false,
+silly testEngine      contributors: false,
+silly testEngine      serverjs: true },
+silly testEngine   _id: 'Shopkeeper@0.0.1',
+silly testEngine   devDependencies: {},
+silly testEngine   engines: { node: '*' },
+silly testEngine   _engineSupported: true,
+silly testEngine   _npmVersion: '1.0.27',
+silly testEngine   _nodeVersion: 'v0.4.11',
+silly testEngine   _defaultsLoaded: true }
+verbose caching /Users/hojberg/code/criticalpair/storekeeper/package.json
+verbose loadDefaults Shopkeeper@0.0.1
+verbose run-script [ 'pretest', 'test', 'posttest' ]
+info pretest Shopkeeper@0.0.1
+info test Shopkeeper@0.0.1
+verbose unsafe-perm in lifecycle true
+silly exec sh "-c" "yeti tests/runner.html --solo"
+info Shopkeeper@0.0.1 Failed to exec test script
+ERR! Shopkeeper@0.0.1 test: `yeti tests/runner.html --solo`
+ERR! `sh "-c" "yeti tests/runner.html --solo"` failed with 1
+ERR! 
+ERR! Failed at the Shopkeeper@0.0.1 test script.
+ERR! This is most likely a problem with the Shopkeeper package,
+ERR! not with npm itself.
+ERR! Tell the author that this fails on your system:
+ERR!     yeti tests/runner.html --solo
+ERR! You can get their info via:
+ERR!     npm owner ls Shopkeeper
+ERR! There is likely additional logging output above.
+ERR! 
+ERR! System Darwin 10.8.0
+ERR! command "node" "/Users/hojberg/local/bin/npm" "test"
+ERR! cwd /Users/hojberg/code/criticalpair/storekeeper
+ERR! node -v v0.4.11
+ERR! npm -v 1.0.27
+verbose exit [ 1, true ]

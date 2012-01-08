@@ -4,7 +4,11 @@
   "homepage":     "http://shopkeep.er",
   "version":      "0.0.1",
   "author":       "Simon Højberg <r.hackr@gmail.com> (http://github.com/hojberg)",
+  "scripts": {
+    "test": "yeti tests/runner.html --solo"
+  },
   "dependencies": {
-    "express":  ">=2.4.0 <2.5.0"
+    "express":  ">=2.4.0 <2.5.0",
+    "handlebars": ">=1.0.2beta"
   }
 }
