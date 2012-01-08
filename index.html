@@ -17,14 +17,14 @@
             <li><a href="#/orders">Orders</a></li>
           </ul>
         </nav>
-        <input type="text" id="search" placeholder="order number">
+        <input type="text" id="search">
       </header>
       <article id="main_content"></article>
     </div>
     <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
     <script src='js/config.js'></script>
     <script>
-      YUI().use("sk:app", function (Y) {
+      YUI().use("storekeeper-app", function (Y) {
         var app = new Y.SK.App({
           container:      '#main_content'
         }).render();

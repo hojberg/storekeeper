@@ -1,4 +1,4 @@
-YUI.add("sk:views:orders", function (Y) {
+YUI.add("storekeeper-views-orders", function (Y) {
 
   var OrdersView = Y.Base.create("ordersView", Y.View, [], {
 

@@ -11,7 +11,7 @@ app.get("/orders.json", function (req, res) {
   res.sendfile("json/orders.json");
 });
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
   res.sendfile('index.html');
 });
 

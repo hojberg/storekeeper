@@ -17,9 +17,18 @@
     <script src='test_config.js'></script>
     <script>
       (function () {
-        window.Y = YUI().use("test", "sk:tests:models:order", "sk:tests:views:dashboard", "sk:tests:views:orders", function (Y) {
+        window.Y = YUI().use("test", 
+
+        "storekeepertests-models-order", 
+        "storekeepertests-models-order_list", 
+        "storekeepertests-views-dashboard",
+        "storekeepertests-views-orders", 
+        "storekeepertests-views-order_list", 
+        "storekeepertests-views-order_list_item", 
+        
+        function (Y) {
           var Tests = Y.SKTests,
-          suite = new Y.Test.Suite("sk:tests");
+          suite = new Y.Test.Suite("storekeeper-tests");
 
           Y.each(Tests, function (t) { suite.add(t); });
 

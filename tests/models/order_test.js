@@ -1,7 +1,7 @@
-YUI.add("sk:tests:models:order", function (Y) {
+YUI.add("storekeepertests-models-order", function (Y) {
   
   var OrderTest = new Y.Test.Case({
-    name: 'sk:tests:models:order',
+    name: 'storekeepertests-models-order',
 
     setUp: function () {
       this.order = new Y.SK.Order();
@@ -21,4 +21,4 @@ YUI.add("sk:tests:models:order", function (Y) {
 
   Y.namespace("SKTests").OrderTest = OrderTest;
 
-}, "0.0.1", { requires: ["test", "sk:models:order"] });
+}, "0.0.1", { requires: ["test", "storekeeper-models-order"] });

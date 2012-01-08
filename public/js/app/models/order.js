@@ -1,4 +1,4 @@
-YUI.add("sk:models:order", function (Y) {
+YUI.add("storekeeper-models-order", function (Y) {
 
   var STATUSES = ["active", "completed"];
 

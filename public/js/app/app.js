@@ -1,4 +1,4 @@
-YUI.add("sk:app", function (Y) {
+YUI.add("storekeeper-app", function (Y) {
 
   var StorekeeperApp = Y.Base.create("storekeeperApp", Y.App, [], {
     
@@ -44,4 +44,4 @@ YUI.add("sk:app", function (Y) {
 
   Y.namespace("SK").App = StorekeeperApp;
 
-}, "0.0.1", {requires: ['app-base', 'app-transitions', "sk:views:dashboard", "sk:views:orders", "sk:models:order_list"]});
+}, "0.0.1", {requires: ['app-base', 'app-transitions', "storekeeper-views-dashboard", "storekeeper-views-orders", "storekeeper-models-order_list"]});

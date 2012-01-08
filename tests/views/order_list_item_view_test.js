@@ -1,10 +1,10 @@
-YUI.add("storekeepertests-views-orders", function (Y) {
+YUI.add("storekeepertests-views-order_list_item", function (Y) {
   
-  var OrdersViewTest = new Y.Test.Case({
-    name: 'storekeepertests-views-orders',
+  var OrderListItemViewTest = new Y.Test.Case({
+    name: 'storekeepertests-views-order_list_item',
 
     setUp: function () {
-      this.view = new Y.SK.OrdersView();
+      this.view = new Y.SK.OrderListView();
     },
 
     tearDown: function () {
@@ -22,6 +22,6 @@ YUI.add("storekeepertests-views-orders", function (Y) {
     
   });
 
-  Y.namespace("SKTests").OrdersViewTest = OrdersViewTest;
+  Y.namespace("SKTests").OrderListItemViewTest = OrderListItemViewTest;
 
-}, "0.0.1", { requires: ["test", "storekeeper-views-orders"] });
+}, "0.0.1", { requires: ["test", "storekeeper-views-order_list_item"] });
