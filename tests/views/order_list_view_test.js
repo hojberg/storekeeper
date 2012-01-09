@@ -35,25 +35,41 @@ YUI.add("storekeepertests-views-order_list", function (Y) {
     "should have OrderListItem as itemView": function () {
       Y.Assert.areEqual(Y.SK.OrderListItemView, this.view.itemView);
     },
+    
+    "should render a table header and table body": function () {
+      this.renderView();
+      this.view.reset();
+      Y.assert(Y.one("table.order_list > thead"), "there should be a thead");
+      Y.assert(Y.one("table.order_list > tbody"), "there should be a tbody");
+    },
 
     "should render a list of orders": function () {
       this.renderView();
+      this.view.reset();
       Y.assert(Y.one("table.order_list"), "there should be a list of orders");
-      Y.Assert.areEqual(3, Y.all("table.order_list tr").size(), "there should be 3 rows");
+      Y.Assert.areEqual(2, Y.all("table.order_list > tbody > tr").size(), "there should be 2 rows");
     },
 
-    "should render a table header": function () {
+    "should render items on modelList reset": function () {
       this.renderView();
-      Y.assert(Y.one("table.order_list > tr > th"), "there should be a th");
-    },
-
-    "should re-render on modelList reset": function () {
+      Y.Assert.areEqual(0, Y.all("table.order_list > tbody > tr").size(), "there should be 0 rows");
+      this.modelList.reset();
+      Y.Assert.areEqual(2, Y.all("table.order_list > tbody > tr").size(), "there should be 2 rows");
     },
 
     "should add an item on modelList add": function () {
+      this.renderView();
+      Y.Assert.areEqual(0, Y.all("table.order_list > tbody > tr").size(), "there should be 0 rows");
+      this.modelList.add([{number: 'jkl321', status: 'active'}]);
+      Y.Assert.areEqual(1, Y.all("table.order_list > tbody > tr").size(), "there should be 1 rows");
     },
 
     "clear should remove all items": function () {
+      this.renderView();
+      this.view.reset();
+      Y.Assert.areEqual(2, Y.all("table.order_list > tbody > tr").size(), "there should be 2 rows");
+      this.view.clear();
+      Y.Assert.areEqual(0, Y.all("table.order_list > tbody > tr").size(), "there should be 0 rows");
     }
 
   });

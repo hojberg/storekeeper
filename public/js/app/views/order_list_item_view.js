@@ -5,7 +5,9 @@ YUI.add("storekeeper-views-order_list_item", function (Y) {
     template: Handlebars.templates['order_list_item/layout'],
 
     render: function () {
-      var container = this.get("container");
+      var container = this.get("container")
+          model     = this.get("model");
+      container.setContent(this.template(model.toJSON()));
       return this;
     }
 

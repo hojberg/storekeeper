@@ -19,15 +19,31 @@ YUI.add("storekeeper-app", function (Y) {
         else {
           this.showDashboard();
         }
-      });      
+      });
     },
 
     showDashboard: function () {
       this.showView('dashboard');
+      this.setCurrentTab("dashboard");
     },
 
     showOrders: function () {
-      this.showView('orders');
+      var orderList = this.get("orderList");
+
+      this.showView('orders', {
+        modelList: orderList
+      });
+
+      orderList.load();
+
+      this.setCurrentTab("orders");
+    },
+
+    setCurrentTab: function (tabClass) {
+      var tabs        = Y.all("#main_nav .tab"),
+          newCurrent  = Y.one("#main_nav .tab." + tabClass);
+      tabs.removeClass("current");
+      newCurrent.addClass("current");
     }
 
   },
@@ -38,6 +54,11 @@ YUI.add("storekeeper-app", function (Y) {
           { path: '/',        callback: 'showDashboard'},
           { path: '/orders',  callback: 'showOrders'}
         ]
+      },
+      orderList: {
+        valueFn: function () {
+          return new Y.SK.OrderList();
+        }
       }
     }
   });

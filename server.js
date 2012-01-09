@@ -15,6 +15,10 @@ app.get('/', function (req, res) {
   res.sendfile('index.html');
 });
 
+app.get('/orders', function (req, res) {
+  res.sendfile('index.html');
+});
+
 app.listen(port, function () {
   console.log('Storekeeper server listening on ' + port);
 });

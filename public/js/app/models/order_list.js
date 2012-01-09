@@ -2,7 +2,7 @@ YUI.add("storekeeper-models-order_list", function (Y) {
 
   var OrderList = Y.Base.create("orderList", Y.ModelList, [Y.ModelSync.REST], {
     model: Y.SK.Order,
-    root: '/orders'
+    root: '/orders.json'
   }, 
   {
     ATTRS: {}
