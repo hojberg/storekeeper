@@ -5,20 +5,19 @@
     groups: {
       storekeeper: {
         combine: false,
-        base: '/js/app/',
-        root: '/js',
-        modules: {
-          'sk:app': {
-            path:     'storekeeper_app.js',
-            requires: ['app-base', 'app-transitions', 'sk:views:dashboard']
-          },
-          'sk:models:order': {
-            path:     'models/order.js',
-            requires: ['model', "gallery-model-sync-rest"]
-          },
-          'sk:views:dashboard': {
-            path:     "views/dashboard_view.js", 
-            requires: ["view"]
+        root: '/js/app/',
+        base: 'js/app/',
+        patterns: {
+          "storekeeper-": {
+            configFn : function (mod) {
+              var path = mod.name .replace("storekeeper-", "")
+                                  .replace(/-/g, "/");
+
+              if (path.indexOf("view") !== -1)  path += "_view.js";
+              else                              path += ".js";
+
+              mod.path = path;
+            }
           }
         }
       }

@@ -1,4 +1,4 @@
-YUI.add("sk:models:order", function (Y) {
+YUI.add("storekeeper-models-order", function (Y) {
 
   var STATUSES = ["active", "completed"];
 
@@ -12,12 +12,10 @@ YUI.add("sk:models:order", function (Y) {
   {
     STATUSES: STATUSES,
     ATTRS: {
-      total: {
-        value: 0.0
-      },
-      status: {
-        value: 'active'
-      }
+      number:       { value: null },
+      createdAt:    { value: null },
+      totalAmount:  { value: 0.0 },
+      status:       { value: 'active' }
     }
   });
   

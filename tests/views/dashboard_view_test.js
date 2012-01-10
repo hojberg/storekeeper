@@ -1,7 +1,7 @@
-YUI.add("sk:tests:views:dashboard", function (Y) {
+YUI.add("storekeepertests-views-dashboard", function (Y) {
   
   var DashboardViewTest = new Y.Test.Case({
-    name: 'sk:tests:views:dashboard',
+    name: 'storekeepertests-views-dashboard',
 
     setUp: function () {
       this.view = new Y.SK.DashboardView();
@@ -19,5 +19,5 @@ YUI.add("sk:tests:views:dashboard", function (Y) {
 
   Y.namespace("SKTests").DashboardViewTest = DashboardViewTest;
 
-}, "0.0.1", { requires: ["test", "sk:views:dashboard"] });
+}, "0.0.1", { requires: ["test", "storekeeper-views-dashboard"] });
 

@@ -1,4 +1,4 @@
-YUI.add("sk:views:dashboard", function (Y) {
+YUI.add("storekeeper-views-dashboard", function (Y) {
 
   var DashboardView = Y.Base.create("dashboardView", Y.View, [], {
 
