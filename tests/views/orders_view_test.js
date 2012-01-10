@@ -5,7 +5,7 @@ YUI.add("storekeepertests-views-orders", function (Y) {
 
     setUp: function () {
       this.view = new Y.SK.OrdersView({
-        modelList: new Y.SK.OrderList();
+        modelList: new Y.SK.OrderList()
       });
     },
 

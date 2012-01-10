@@ -4,7 +4,9 @@ YUI.add("storekeepertests-views-order_list_item", function (Y) {
     name: 'storekeepertests-views-order_list_item',
 
     setUp: function () {
-      this.view = new Y.SK.OrderListItemView();
+      this.view = new Y.SK.OrderListItemView({
+        model: new Y.SK.Order({number: "asd123", status: "active"})
+      });
     },
 
     tearDown: function () {
@@ -31,4 +33,4 @@ YUI.add("storekeepertests-views-order_list_item", function (Y) {
 
   Y.namespace("SKTests").OrderListItemViewTest = OrderListItemViewTest;
 
-}, "0.0.1", { requires: ["test", "storekeeper-views-order_list_item"] });
+}, "0.0.1", { requires: ["test", "storekeeper-views-order_list_item", "storekeeper-models-order"] });

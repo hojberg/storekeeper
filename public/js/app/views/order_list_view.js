@@ -8,8 +8,8 @@ YUI.add("storekeeper-views-order_list", function (Y) {
 
     initializer: function () {
       var modelList = this.get("modelList");
-      modelList.after("reset", this.reset, this);
-      modelList.after("add",   this.add, this);
+      modelList.after("reset", this.reset,  this);
+      modelList.after("add",   this.add,    this);
     },
 
     render: function () {
@@ -21,7 +21,7 @@ YUI.add("storekeeper-views-order_list", function (Y) {
     reset: function (ev) {
       var modelList = this.get("modelList");
       this.clear();
-      Y.each(modelList.toArray(), this.add, this);
+      Y.each(modelList.toArray(), this._add, this);
     },
 
     clear: function () {
@@ -31,11 +31,15 @@ YUI.add("storekeeper-views-order_list", function (Y) {
       this.set("items", items);
     },
 
-    add: function (model) {
+    add: function (ev) {
+      this._add(ev.model);
+    },
+
+    _add: function (model) {
       var container = this.get("container"),
           tbody     = container.one("tbody"),
           itemView  = new this.itemView({model: model});
-  
+
       this.get("items").push(itemView);
       tbody.append(itemView.render().get("container"));
     },

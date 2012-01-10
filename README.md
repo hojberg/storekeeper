@@ -3,7 +3,7 @@ A drop-in UI for webshop administration
 
 ## Development
 
-### run tests
+### run tests (needs yeti running)
 `npm test`
 
 ### generate templates

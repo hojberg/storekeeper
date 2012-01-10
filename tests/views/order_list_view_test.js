@@ -52,8 +52,14 @@ YUI.add("storekeepertests-views-order_list", function (Y) {
 
     "should render items on modelList reset": function () {
       this.renderView();
+
       Y.Assert.areEqual(0, Y.all("table.order_list > tbody > tr").size(), "there should be 0 rows");
-      this.modelList.reset();
+
+      this.view.get("modelList").reset([
+        {number: 'jkl321', status: 'active'}, 
+        {number: 'asd365', status: 'active'}
+      ]);
+      
       Y.Assert.areEqual(2, Y.all("table.order_list > tbody > tr").size(), "there should be 2 rows");
     },
 
