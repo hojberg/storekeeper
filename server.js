@@ -7,7 +7,15 @@ app.configure(function () {
   app.use(express.static(pubDir));
 });
 
+app.get("/orders.json", function (req, res) {
+  res.sendfile("json/orders.json");
+});
+
 app.get('/', function (req, res) {
+  res.sendfile('index.html');
+});
+
+app.get('/orders', function (req, res) {
   res.sendfile('index.html');
 });
 
