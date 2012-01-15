@@ -6,7 +6,7 @@
       storekeeper: {
         combine: false,
         root: '/js/app/',
-        base: 'js/app/',
+        base: '/js/app/',
         patterns: {
           "storekeeper-": {
             configFn : function (mod) {

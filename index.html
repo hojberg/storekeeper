@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Storekeeper</title>
-    <link rel="stylesheet/less"  type="text/css" href="css/master.less">
-    <script src="js/vendor/less-1.1.5.min.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="/css/master.less">
+    <script src="/js/vendor/less-1.1.5.min.js"></script>
   </head>
   <body>
     <div id='storekeeper_app'>
@@ -17,18 +17,19 @@
             <li class='tab orders'><a href="#/orders">Orders</a></li>
           </ul>
         </nav>
-        <input type="text" id="search">
+        <input type="text" id="search" />
       </header>
       <article id="main_content"></article>
     </div>
-    <script src='js/vendor/handlebars.runtime-1.0.0.beta.6.js'></script>
-    <script src='js/app/views/templates/compiled.js'></script>
+    <script src='/js/vendor/handlebars.runtime-1.0.0.beta.6.js'></script>
+    <script src='/js/app/views/templates/compiled.js'></script>
     <script src="http://yui.yahooapis.com/3.5.0pr1/build/yui/yui-min.js"></script>
-    <script src='js/config.js'></script>
+    <script src='/js/config.js'></script>
     <script>
       YUI().use("storekeeper-app", function (Y) {
         var app = new Y.SK.App({
-          container:      '#main_content'
+          container:      '#main_content',
+          viewContainer:  '#main_content'
         }).render();
       });
     </script>

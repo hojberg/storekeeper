@@ -1,5 +1,20 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
+templates['order/layout'] = template(function (Handlebars,depth0,helpers,partials,data) {
+  helpers = helpers || Handlebars.helpers;
+  var buffer = "", stack1, self=this, functionType="function", helperMissing=helpers.helperMissing, undef=void 0, escapeExpression=this.escapeExpression;
+
+
+  buffer += "<h1 class='number'>";
+  stack1 = helpers.number || depth0.number
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "number", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "</h1>\n\n<ul>\n  <li class='total_amount'>";
+  stack1 = helpers.totalAmount || depth0.totalAmount
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "totalAmount", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "</li>\n</ul>\n";
+  return buffer;});
 templates['order_list/layout'] = template(function (Handlebars,depth0,helpers,partials,data) {
   helpers = helpers || Handlebars.helpers;
   var self=this;
@@ -11,11 +26,15 @@ templates['order_list_item/layout'] = template(function (Handlebars,depth0,helpe
   var buffer = "", stack1, self=this, functionType="function", helperMissing=helpers.helperMissing, undef=void 0, escapeExpression=this.escapeExpression;
 
 
-  buffer += "<td>";
+  buffer += "<td><a href=\"#/orders/";
   stack1 = helpers.number || depth0.number
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "number", { hash: {} }); }
-  buffer += escapeExpression(stack1) + "</td>\n<td>";
+  buffer += escapeExpression(stack1) + "\">";
+  stack1 = helpers.number || depth0.number
+  if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
+  else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "number", { hash: {} }); }
+  buffer += escapeExpression(stack1) + "</a></td>\n<td>";
   stack1 = helpers.totalAmount || depth0.totalAmount
   if(typeof stack1 === functionType) { stack1 = stack1.call(depth0, { hash: {} }); }
   else if(stack1=== undef) { stack1 = helperMissing.call(depth0, "totalAmount", { hash: {} }); }

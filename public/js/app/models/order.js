@@ -3,7 +3,9 @@ YUI.add("storekeeper-models-order", function (Y) {
   var STATUSES = ["active", "completed"];
 
   var Order = Y.Base.create("order", Y.Model, [Y.ModelSync.REST], {
-    root: "/orders",
+    idAttribute: 'number',
+
+    url: "/orders/{number}.json",
 
     markAsCompleted: function () {
       this.set("status", "completed");
