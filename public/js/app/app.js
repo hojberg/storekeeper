@@ -8,6 +8,9 @@ YUI.add("storekeeper-app", function (Y) {
       },
       orders: {
         type: Y.SK.OrdersView
+      },
+      order: {
+        type: Y.SK.OrderView
       }
     },
 
@@ -39,9 +42,26 @@ YUI.add("storekeeper-app", function (Y) {
       this.setCurrentTab("orders");
     },
 
+    showOrder: function (req) {
+      var number  = req.params.number,
+          list    = this.get("orderList"),
+          order   = list.getByNumber(number);
+         
+      if (!order) order = new Y.SK.Order({ number: number });
+
+      this.showView('order', {
+        model: order
+      });
+
+      order.load();
+
+      this.setCurrentTab("orders");
+    },
+
     setCurrentTab: function (tabClass) {
       var tabs        = Y.all("#main_nav .tab"),
           newCurrent  = Y.one("#main_nav .tab." + tabClass);
+
       tabs.removeClass("current");
       newCurrent.addClass("current");
     }
@@ -51,8 +71,9 @@ YUI.add("storekeeper-app", function (Y) {
     ATTRS: {
       routes: {
         value: [
-          { path: '/',        callback: 'showDashboard'},
-          { path: '/orders',  callback: 'showOrders'}
+          { path: '/',                callback: 'showDashboard' },
+          { path: '/orders',          callback: 'showOrders'    },
+          { path: '/orders/:number',  callback: 'showOrder'     }
         ]
       },
       orderList: {
@@ -65,4 +86,12 @@ YUI.add("storekeeper-app", function (Y) {
 
   Y.namespace("SK").App = StorekeeperApp;
 
-}, "0.0.1", {requires: ['app-base', 'app-transitions', "storekeeper-views-dashboard", "storekeeper-views-orders", "storekeeper-models-order_list"]});
+}, "0.0.1", {requires: ['app-base', 
+                        'app-transitions', 
+                        "storekeeper-views-dashboard", 
+                        "storekeeper-views-orders", 
+                        "storekeeper-views-order", 
+                        "storekeeper-models-order_list", 
+                        "storekeeper-models-order"
+                        ]
+});
