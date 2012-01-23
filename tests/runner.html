@@ -18,13 +18,18 @@
     <script>
       (function () {
         window.Y = YUI().use("test", 
+        // ----- Add test modules here ----- //
 
+        // models to test
         "storekeepertests-models-order", 
         "storekeepertests-models-order_list", 
+
+        // views to test
         "storekeepertests-views-dashboard",
         "storekeepertests-views-orders", 
         "storekeepertests-views-order_list", 
         "storekeepertests-views-order_list_item", 
+        "storekeepertests-views-order", 
         
         function (Y) {
           var Tests = Y.SKTests,

@@ -5,6 +5,10 @@ YUI.add("storekeepertests-models-order_list", function (Y) {
 
     setUp: function () {
       this.orderList = new Y.SK.OrderList();
+      this.orderList.add([
+        {number: '123asd'},
+        {number: 'asd123'}
+      ]);
     },
 
     tearDown: function () {
@@ -13,8 +17,13 @@ YUI.add("storekeepertests-models-order_list", function (Y) {
 
     "model should be an Order": function () {
       Y.Assert.areEqual(Y.SK.Order, this.orderList.model);
-    }
+    },
 
+    "should get model by number": function () {
+      var number = "asd123";
+
+      Y.Assert.areEqual(number, this.orderList.getByNumber(number).get("number"));
+    }
     
   });
 
