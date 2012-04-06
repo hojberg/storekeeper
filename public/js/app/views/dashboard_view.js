@@ -1,15 +1,26 @@
 YUI.add("storekeeper-views-dashboard", function (Y) {
 
-  var DashboardView = Y.Base.create("dashboardView", Y.View, [], {
+  Y.namespace('SK').DashboardView = Y.Base.create("dashboardView", Y.View, [], {
 
+    template: Handlebars.templates['dashboard/layout'],
+    
     render: function () {
       var container = this.get("container");
-      container.setContent("Dashboard");
+      container.setContent( this.template() );
+
+      this._renderViews();
+
       return this;
+    },
+
+    _renderViews: function () {
+    },
+
+  }, 
+  {
+    ATTRS: {
+      ordersOverview: {}
     }
-
   });
-
-  Y.namespace("SK").DashboardView = DashboardView;
 
 }, "0.0.1", {requires: ['view']});
