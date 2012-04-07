@@ -1,59 +1,46 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-  "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <title>CSS Arrow Please Specs</title>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Storekeeper Specs</title>
 
-  <link rel="stylesheet" type="text/css" href="vendor/jasmine/jasmine.css">
-  <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
-  <script type="text/javascript" src="vendor/jasmine/jasmine.js"></script>
-  <script type="text/javascript" src="vendor/jasmine/jasmine-html.js"></script>
+    <link rel="stylesheet" type="text/css" href="vendor/jasmine/jasmine.css">
+    <script src='../public/js/vendor/handlebars.runtime-1.0.0.beta.6.js'></script>
+    <script src='../public/js/app/views/templates/compiled.js'></script>
+    <script src="http://yui.yahooapis.com/3.5.0pr4/build/yui/yui-min.js"></script>
+    <script type="text/javascript" src="vendor/jasmine/jasmine.js"></script>
+    <script type="text/javascript" src="vendor/jasmine/jasmine-html.js"></script>
 
-  <!-- include spec files here... -->
-  <script type="text/javascript" src="spec/models/arrow_spec.js"></script>
-  <script type="text/javascript" src="spec/views/arrow_configuration_view_spec.js"></script>
-  <script type="text/javascript" src="spec/views/arrow_css_view_spec.js"></script>
-  <script type="text/javascript" src="spec/views/arrow_preview_view_spec.js"></script>
-  <script type="text/javascript" src="spec/app_spec.js"></script>
+    <script src='test_config.js'></script>
+    <script type="text/javascript">
+      window.Y = YUI().use("test", 
+      // ----- Add test modules here ----- //
 
-  <!-- include source files here... -->
-  <script type="text/javascript" src="lib/models/arrow.js"></script>
-  <script type="text/javascript" src="lib/views/arrow_configuration_view.js"></script>
-  <script type="text/javascript" src="lib/views/arrow_css_view.js"></script>
-  <script type="text/javascript" src="lib/views/arrow_preview_view.js"></script>
-  <script type="text/javascript" src="lib/app.js"></script>
+      // models to test
+      "skspec:models:order", 
+      "skspec:models:order_list", 
 
-  <script type="text/javascript">
-    (function() {
-      var jasmineEnv = jasmine.getEnv();
-      jasmineEnv.updateInterval = 1000;
+      // views to test
+      function (Y) {
 
-      var trivialReporter = new jasmine.TrivialReporter();
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
 
-      jasmineEnv.addReporter(trivialReporter);
+        var trivialReporter = new jasmine.TrivialReporter();
 
-      jasmineEnv.specFilter = function(spec) {
-        return trivialReporter.specFilter(spec);
-      };
+        jasmineEnv.addReporter(trivialReporter);
 
-      var currentWindowOnload = window.onload;
+        jasmineEnv.specFilter = function(spec) {
+          return trivialReporter.specFilter(spec);
+        };
 
-      window.onload = function() {
-        if (currentWindowOnload) {
-          currentWindowOnload();
-        }
-        execJasmine();
-      };
-
-      function execJasmine() {
         jasmineEnv.execute();
-      }
 
-    })();
-  </script>
+      });
+    </script>
 
-</head>
+  </head>
 
-<body>
-</body>
+  <body>
+  </body>
 </html>

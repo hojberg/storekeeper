@@ -1,4 +1,4 @@
-YUI.add("storekeeper-models-order_list", function (Y) {
+YUI.add("sk:models:order_list", function (Y) {
 
   var OrderList = Y.Base.create("orderList", Y.ModelList, [Y.ModelSync.REST], {
     model: Y.SK.Order,
@@ -22,4 +22,4 @@ YUI.add("storekeeper-models-order_list", function (Y) {
 
   Y.namespace("SK").OrderList = OrderList;
 
-}, "0.0.1", {requires: ["model-list", "gallery-model-sync-rest", "storekeeper-models-order"]});
+}, "0.0.1", {requires: ["model-list", "gallery-model-sync-rest", "sk:models:order"]});
